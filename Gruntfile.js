@@ -3,6 +3,26 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     concat: {
+      dist: {
+        files:[
+          {src: ['public/client/app.js',
+                 'public/client/link.js',
+                 'public/client/links.js',
+                 'public/client/linkView.js',
+                 'public/client/linksView.js',
+                 'public/client/createLinkView.js',
+                 'public/client/router.js'
+                ],
+           dest: 'public/client/production_index.js'},
+
+          {src: ['public/lib/jquery.js',
+                 'public/lib/underscore.js',
+                 'public/lib/backbone.js',
+                 'public/lib/handlebars.js'
+                ],
+           dest: 'public/lib/production_layout.js'}
+        ]
+      }
     },
 
     mochaTest: {
@@ -106,7 +126,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('deploy', [
     // add your deploy tasks here
+    'concat'
   ]);
-
-
 };
