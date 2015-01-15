@@ -13,14 +13,14 @@ module.exports = function(grunt) {
                  'public/client/createLinkView.js',
                  'public/client/router.js'
                 ],
-           dest: 'public/client/production_index.js'},
+           dest: 'public/dist/production_index.js'},
 
           {src: ['public/lib/jquery.js',
                  'public/lib/underscore.js',
                  'public/lib/backbone.js',
                  'public/lib/handlebars.js'
                 ],
-           dest: 'public/lib/production_layout.js'}
+           dest: 'public/dist/production_layout.js'}
         ]
       }
     },
@@ -43,10 +43,10 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files:[
-          {src : 'public/client/production_index.js',
-           dest: 'public/client/production_index.min.js'} ,
-          {src : 'public/lib/production_layout.js',
-           dest: 'public/lib/production_layout.min.js'}
+          {src : 'public/dist/production_index.js',
+           dest: 'public/dist/production_index.min.js'} ,
+          {src : 'public/dist/production_layout.js',
+           dest: 'public/dist/production_layout.min.js'}
         ]
       }
     },
